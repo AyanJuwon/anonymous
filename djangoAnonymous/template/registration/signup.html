@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{% static '/css/index.css' %}">
+    <link rel="stylesheet" href="{% static '/css/login.css' %}">
+    <title>Signup</title>
+</head>
+<body>
+<header>
+    <nav>
+        <h1>Keep your password </h1>
+    </nav>
+</header>
+<body>
+   
+    <div class="loginform">
+ <h1>Sign Up</h1>
+
+    <!-- <form method='POST' action="">
+{% csrf_token %}
+{{form.as_p}}
+ -->
+{% for form in form %}
+<div class="fieldWrapper">
+    {{ form.errors }}
+    <!-- {{ form.label_tag }} -->
+     {{ form }}
+        {% if field.help_text %}
+           <p class="help">{{ field.help_text|safe }}</p>
+        {% endif %}
+       
+</div>
+{% endfor %}
+<p><button class="signup"  type="Submit">Register</button></p>
+    </form>
+</div>
+</body>
+</html>

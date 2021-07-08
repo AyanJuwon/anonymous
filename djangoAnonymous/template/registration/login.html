@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './css/index.css' %}">
+    <link rel="stylesheet" href="{% static './css/login.css' %}">
+    <link rel="stylesheet" href="{% static './css/create.css' %}">
+    <title>Keep your password</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Keep your password </h1>
+        </nav>
+    </header>
+
+    <div class="loginform">
+        <h1>LOGIN</h1>
+        <form method="POST" action="{% url 'login'%}">
+{% csrf_token %}
+            <!-- <p><input type="text" placeholder="username"></p>
+            <p>
+                <input type="password" placeholder="password"></p> -->
+                {{form.as_p}}
+            <p> <button class="loginbutton" type="submit">Login</button></p>
+
+
+            <p>Not a member? <a href ="{% url 'accounts:signup' %}">signup here</a> </p>
+            <p>forgot password? retrieve password here</p>
+        </form>
+        
+    </div>
+</body>
+
+</html>

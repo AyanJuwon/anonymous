@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{% static './css/index.css' %}" />
+  
+    <link rel="stylesheet" href="{% static './css/delete.css' %}" />
+    <link rel="stylesheet" href="{% static './css/create.css' %}" />
+    <title>Keep your password</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        {% if user.is_authenticated %}
+        <h1>Keep your password</h1>
+        <h2>Welcome {{user.username }}</h2>
+        
+       </header>
+        
+
+        
+        
+        {% endif %}
+      </nav>
+    <div class="loginform">
+<h3>Create a New Password</h3>
+<br>
+{% if saved %}
+<h3>Password is saved</h3>
+{% endif %}
+<form method="post" action="{% url 'hub:create' %}" class="form-group">
+    {% csrf_token %}
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+           
+        </div>
+        {{form.as_p }}
+        <!-- <p><input type="text" placeholder="Account username"></p>
+        <p>
+          <input type="text" placeholder="Account Name"></p>
+          <input type="text" placeholder="Account Password"></p> -->
+      <div class="formbuttons">
+          <button name="save" type="submit" class="create">Create</button>
+<a href="{% url 'hub:password_list' %}">
+    <button class="list_link" type="button">Go to Password list</button> </a>
+</div>
+    </div>
+</form>
+  
+    <div class="account-buttons">
+  <form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button class="logout" type="submit">Logout</button>
+  </form>
+  </div>
+  </div>
+    <div></div>
+   
+  </body>
+</html>

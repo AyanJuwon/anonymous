@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/delete.css">
+    <title>Keep your password</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!-- {% if user.is_authenticated %} -->
+            <h1>Keep your password</h1>
+            
+        </nav>
+    </header>
+    
+        <!-- {% for data  in data %} -->
+        <div class="loginform">
+            <h2>Dear{{user}}</h2>
+        <h3>Account Username: {{data.password_username}}</h3>
+        <h3>Account Name: {{data.password_name}}</h3>
+        <h3>Account Password: {{data.password}}</h3>
+        
+        <form action="{% url 'hub:delete_data' data.id %}">
+            {% csrf_token %}
+            <h2>Are you sure you want to delete?</h2>
+            <button class='delete' type="button">Delete</button>
+        <a href="{% url 'hub:password_list' %}"><button class='return_to_list'>No, Return to list</button></a>
+        </form>
+        </div>
+    {% endfor %}
+
+    {% endif %}
+</body>
+
+</html>

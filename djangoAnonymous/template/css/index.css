@@ -1,0 +1,17 @@
+body{
+    
+    /* #bdc3c7  #2c3e50; */
+    background-image: url("./icons8-padlock.svg");
+    
+    background-size: cover;
+
+    background-repeat: no-repeat;
+    background: linear-gradient(#bdc3c7,#2c3e50);
+    background-position: center;
+    
+}
+
+header{
+text-align:center;
+color:white;
+}
