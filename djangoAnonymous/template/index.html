@@ -15,7 +15,9 @@
         <ol>Create account</ol>
         <ol>choose a unique username</ol>
         <ol>copy link and send to your friends</ol>
-        <ol>login to view your dashboard and see anonymous messages from whoever</ol>
+        <ol><a href="{% url 'login' %}" >Login</a>
+             to view your dashboard and see anonymous messages from whoever</ol>
+            <p>Not a member? <a href="{% url 'accounts:signup' %}">Signup here</a></p>
     </ul>
 </nav></header>
 

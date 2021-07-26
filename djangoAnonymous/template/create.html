@@ -14,16 +14,12 @@
   <body>
     <header>
       <nav>
-        {% if user.is_authenticated %}
         <h1>Keep your password</h1>
-        <h2>Welcome {{user.username }}</h2>
+        <h2>Welcome</h2>
         
        </header>
         
 
-        
-        
-        {% endif %}
       </nav>
     <div class="loginform">
 <h3>Create a New Password</h3>
@@ -38,14 +34,8 @@
            
         </div>
         {{form.as_p }}
-        <!-- <p><input type="text" placeholder="Account username"></p>
-        <p>
-          <input type="text" placeholder="Account Name"></p>
-          <input type="text" placeholder="Account Password"></p> -->
       <div class="formbuttons">
           <button name="save" type="submit" class="create">Create</button>
-<a href="{% url 'hub:password_list' %}">
-    <button class="list_link" type="button">Go to Password list</button> </a>
 </div>
     </div>
 </form>

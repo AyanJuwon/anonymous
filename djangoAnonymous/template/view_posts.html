@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static './css/index.css' %}">
     <link rel="stylesheet" href="{% static './css/password.css' %}">
-    <title>Keep your password</title>
+    <title>Django Anonymous</title>
 </head>
 
 <body>
@@ -18,9 +18,7 @@
             <h2>
                 <a href="{% url 'logout' %}"><button class="delete">
                         Logout</button></a>
-               {% if data %}
-                <a href="{% url 'hub:create' %}"><button type="button" class="create">Create new password</button></a> <span></span>
-               {% else %}
+               
 
             {% endif %} </h2>
             
