@@ -29,14 +29,15 @@ def createMessage(request, user):
             p.save()
 
             saved = True
-            return redirect('/post', {'form': form, 'saved': saved})
+            # return redirect("createMessage",  {'form': form, 'saved': saved, 'user': user}, user=user)
+            return render(request, 'index.html')
     else:
         form = MessageForm()
     return render(request, 'create.html', {'form': form})
 
 
 # create page for user to view messages relating to them filter by date i guess
-def userDashboard(response, user):
+def userDashboard(response):
 
     data = Message.objects.filter(user=response.user)
     # user = get_object_or_404(PasswordList,pk = id)
