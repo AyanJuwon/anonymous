@@ -14,4 +14,6 @@ class Message(models.Model):
     time = models.DateTimeField(auto_now_add=True)
     
     def __str__(self) -> str:
-        return f"{self.time}"
+        date = str(self.time)
+        mssg = self.message[0:10]
+        return f"{mssg},{date}"
