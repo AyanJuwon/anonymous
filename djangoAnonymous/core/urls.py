@@ -7,6 +7,11 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('', views.home, name='home'),
     path('home/', views.home, name='home'),
+    path('post/', views.createMessage, name='createMessage'),
+    path('<str:user>/post/', views.createMessage, name='createMessage'),
+    path('view_post/', views.userDashboard, name='userDashboard'),
+    path('<str:user>/view_post/', views.userDashboard, name='userDashboard'),
+
     #  Home page should have a link to login/signup or i should just redirect to the login page, then redirect to dashboard and copy link page
-    
+
 ]

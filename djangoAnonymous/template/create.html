@@ -14,26 +14,24 @@
   <body>
     <header>
       <nav>
-        <h1>Keep your password</h1>
-        <h2>Welcome</h2>
-        
-       </header>
+      <h1>Create</h1>
         
 
-      </nav>
+      </nav> </header>
     <div class="loginform">
-<h3>Create a New Password</h3>
 <br>
 {% if saved %}
-<h3>Password is saved</h3>
+<h3>Message posted</h3>
 {% endif %}
-<form method="post" action="{% url 'hub:create' %}" class="form-group">
+<form method="post" action="{% url 'core:createMessage' %}" class="form-group">
     {% csrf_token %}
     <div class="input-group mb-3">
+      {% for field in form %}
         <div class="input-group-prepend">
-           
+          {{ field.label_tag }} {{ field }}
+        
         </div>
-        {{form.as_p }}
+        {% endfor %}
       <div class="formbuttons">
           <button name="save" type="submit" class="create">Create</button>
 </div>
